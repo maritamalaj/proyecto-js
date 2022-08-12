@@ -1,0 +1,92 @@
+.parent {
+    display: grid;
+    grid-template-columns: (1fr, 1fr);
+    gap: 20px;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+
+@media screen and (max-width:600px) {
+    .animate__animated{
+        display: none;}
+} 
+
+.form-contact {
+grid-area: 1 / 1 / 2 / 2;
+width: 500px;
+padding: 30px;
+margin: auto;
+margin-top: 100px;
+border-radius: 4px;
+color: $color-tipografia;
+background-color: $color-principal;;
+box-shadow: 7px 13px 37px #000;
+p {
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+}
+&:hover {
+        color: white;
+        text-decoration: underline;
+    }
+}
+.botons {
+    width: 400px;
+    background-color: #cccccc;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    margin: 16px;
+}
+
+.container-contact {
+grid-area: 1 / 2 / 2 / 3;
+}
+#datos-contacto {
+list-style: none;
+padding: 0px 50px;
+}
+ul {
+li {
+    color: $color-principal;;
+}
+}
+h1 {
+color: $color-principal;;
+display: flex;
+justify-content: left;
+text-align: left;
+padding: 1%;
+margin: 2%;
+font-size: 20px;
+}
+section {
+img {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+}
+.google-map {
+width: 90%;
+height: 90%;
+margin: 20px;
+padding: 20px;
+}
+.contctrl {
+width: 100%;
+padding: 10px;
+border-radius: 4px;
+margin-bottom: 16px;
+border: 1px solid $color-tipografia;
+font-size: 18px;
+background-color:$color-principal; 
+margin: 0.5rem;
+color: $color-tipografia;
+}
+.contact-title{
+    margin: 0.5rem;
+}
