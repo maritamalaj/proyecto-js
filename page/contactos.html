@@ -26,6 +26,8 @@
     <!-- Animaciones-->
     <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
+    <!--Aos-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!--CSS -->
     <link rel="stylesheet" href="../estilos/estilos.css">
@@ -56,20 +58,55 @@
    </header>
 
     
-    
+   <section id="contacto">
+    <h2>CONTACTANOS</h2>
+    <div class="formulario">
+      <div class="form__margin">
+        <form id="form">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label label__margin">Nombre</label>
+            <input type="text" class="form-control nombreForm input" id="nombre"
+              placeholder="Introduzca su nombre" name="nombre" required>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control input" id="email"
+              placeholder="sucorreo@sucorreo.com.ar" name="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="number_phone" class="form-label">Número de Telefóno</label>
+            <input type="number" class="form-control telForm input" id="phone"
+              placeholder="Introduzca su número de teléfono" name="phone"  required>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="" rows="3"
+              placeholder="Deje su mensaje aquí" name="message" required></textarea>
+          </div>
+          <button id="btnSubmit" class="btn btn-success btn-large buttonPropiedades" type="submit">Enviar</button>
+        </form>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        
+        <script type="text/javascript">
+          emailjs.init('Od-FpZp72Cg-O2WOv')
+        </script>
+      </div>
 
- <div class="container-contact">
+
+  </section>
+
+ <!--<div class="container-contact">
    <div class="row">
     <div class="col-6">
     <h2 class="contact-title">Contáctanos</h2>
-     <input class="contctrl" type="text" name="nombre"placeholder="Ingrese su Nombre">
-      <input class="contctrl" type="text" name="apellido"placeholder="Ingrese sus Apellido">
-      <input class="contctrl" type="email" name="correo"placeholder="Ingrese su Correo">
-      <input class="contctrl" type="password" name="correo"id="correo" placeholder="Ingrese su Contraseña">
+     <input class="contctrl" type="text" id="nombre" name="nombre"placeholder="Ingrese su Nombre">
+      <input class="contctrl" type="text" id="apellido" name="apellido"placeholder="Ingrese sus Apellido">
+      <input class="contctrl" type="email" id= "email" name="correo"placeholder="Ingrese su Correo">
+      <input class="contctrl" type="password" id="password" name="correo"id="correo" placeholder="Ingrese su Contraseña">
       <p>Estoy de Acuerdo con <a href="#">Terminos y condiciones</a></p>
-      <input class="botons" type="submit" value="Registrar">
+      <button class="botons" type="submit" class = "warnings" id="warnings" value="Registrar"></button>
       <p> <a href="#">¿Ya tengo cuenta?</a></p>
-  </div>
+  </div>-->
 
 
   <div class="col-6">
@@ -125,7 +162,9 @@
       
    <em class="border-top border-primary"> MAM All Rights Reserved - Terminos Legales.</em>
   </footer>
-  
+  	<!-- Sweet Alert -->
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="../login.js"></script>
   <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

@@ -27,6 +27,12 @@
     <!-- Animaciones-->
     <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
+    <!--sweetalert-->
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+     
+    <!--Toastify-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
 
     <!--CSS -->
     <link rel="stylesheet" href="../estilos/estilos.css">
@@ -70,9 +76,35 @@
          <h2 class= "title">Estudios realizados en nuestro Centro</h2>
        </div>
 
-      <section id="galeria" class="row justify-content-center"></section>
-      <button id="fin">Finalizar selección de estudios</button>
+       <section id="galeria" class="row justify-content-center"></section>
+      
+       <!-- carrtio modal js-->
+            <h4>Estudios Seleccionados</h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Estudio</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody id="tablabody">
+       <!-- aqui tabla carrito -->
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h4 id="gastoTotal">Total: $</h4>
+        </div>
+      </div>
+
+       <!--<button id="finalizar" class="fin">Finalizar selección de estudios</button>
+       <button id="quitar" class="fin"> Quitar Estudios </button>-->
+
     </main>
+
 
 
 
@@ -114,8 +146,13 @@
     <em class="border-top border-primary"> MAM All Rights Reserved - Terminos Legales.</em>
 
   </footer>
+ <!--sweetalert-->
+ <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
  
- 
+ <!--Toastify-->
+ <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
  <script src="../estudio.js"></script>
  </body>

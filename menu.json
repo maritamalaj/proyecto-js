@@ -1,0 +1,49 @@
+[{   
+    "id": "1",
+    "nombre":"Radiografia Simple",
+    "precio": 1500,
+    "fuente": "../multimedia/radio.png ",
+    "turno":false
+},
+
+{
+    "id": "2",
+    "nombre":"Mamografia Digital",
+    "precio": 3500,
+    "fuente": "../multimedia/mamorx.png",
+    "turno":false
+},
+
+{
+   "id": "3",
+    "nombre":"Tomografia Axial Computada ",
+    "precio": 5000,
+    "fuente": "../multimedia/tcomp.png",
+    "turno":false
+},
+
+{
+    "id": "4",
+    "nombre":"Estudios Contrastados ",
+    "precio": 3900,
+    "fuente": "../multimedia/estctte.png",
+    "turno":true
+},
+
+{
+    "id": "5",
+    "nombre":"Resonancia Magnetica",
+    "precio": 8500,
+    "fuente": "../multimedia/rmn.png",
+    "turno":false
+},
+
+{
+    "id":"6",
+    "nombre":"Ecografia ",
+    "precio": 1500,
+    "fuente": "../multimedia/eco.png",
+    "turno":true
+}
+
+]
