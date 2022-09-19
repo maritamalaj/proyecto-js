@@ -15,9 +15,7 @@ const pagoMP = document.getElementById("payment-mp");
 const efectivo = document.getElementById("efectivo");
 const btnComprar = document.getElementsByClassName("buttonPropiedades")
 let metodoPago = [];
-let itemsNumber=document.getElementById("cart-items");
-let cantidadItems= carrito.length;
-itemsNumber.innerHTML=cantidadItems;
+
 
 //COMPRA
 let compraRealizada = localStorage.getItem("carrito") ? JSON.parse(localStorage.getItem("carrito")) : [];
