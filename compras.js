@@ -17,6 +17,7 @@ const btnComprar = document.getElementsByClassName("buttonPropiedades")
 let metodoPago = [];
 
 
+
 //COMPRA
 let compraRealizada = localStorage.getItem("carrito") ? JSON.parse(localStorage.getItem("carrito")) : [];
 
