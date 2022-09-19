@@ -2,9 +2,14 @@
 
 let cards=document.getElementById("galeria");
 let listaEstudios=[]
-let carrito =[]
 //CARRITO   STORERAGE JSON -guardar ultima info del carrito-////Operador logico OR
-carrito = JSON.parse(localStorage.getItem("carrito"))||[]; 
+let carrito =JSON.parse(localStorage.getItem("carrito")) || []; 
+let btnCarrito = document.getElementById("carrito");
+let itemsNumber=document.getElementById("cart-items");
+let itemCarrito={nombre:'',cantidad:'',subtotal:''}
+let cantidadItems= carrito.length;
+itemsNumber.innerHTML=cantidadItems;
+
 // Operador logico OR//
 const estudios= JSON.parse(localStorage.getItem("estudios"))||[]
 const vaciarCarrito = document.getElementById("vaciar-carrito");
@@ -22,8 +27,18 @@ class listado {
     }
 }
 
+btnCarrito.addEventListener("click", ()=> {
+    prodACarrito ();
+    
+    const myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {keyboard: true});
+    const modalToggle = document.getElementById('toggleMyModal'); 
+    myModal.show(modalToggle);
 
 
+
+})
+
+//btnCarrito.onclick(()=>{alert("se hizo click en boton carrito")});
  
 // CARDS// adquierolos datos desde json e inserto las cards
 renderizarMenu()
@@ -69,16 +84,25 @@ function renderizarMenu(){
 
 //Agrego estudios al carrito//
 function newAddToCart(selectedId){ //recibo el id
-    let selectedEstud = listaEstudios.find(compra => compra.id == selectedId);
-    if(selectedEstud == undefined){
-        let selectedEstud = {
+    let selectedEstud = carrito.find(compra => compra.id == selectedId.id);
+    console.log(selectedEstud);
+    if(selectedEstud){
+        selectedEstud.cantidad++;
+       
+    }else{
+        selectedEstud = {
             ...selectedId,
             cantidad:1
-        }; 
-    
+        }
         carrito.push(selectedEstud) 
         console.table(selectedId); 
         console.table(carrito); 
+    }
+
+    
+       
+    
+        
 
       
         swal({
@@ -109,7 +133,7 @@ function newAddToCart(selectedId){ //recibo el id
            
         });
         
-    }
+    
     
 }
 const filasCarrito=document.getElementById("items")
@@ -150,14 +174,19 @@ function prodACarrito (){
 const eliminarDelCarrito = (prodId) => {
    const item = carrito.find((compra) => compra.id === prodId);
    const indice = carrito.indexOf(item);
+
    carrito.splice(indice, 1);
+
+   localStorage.setItem("carrito",JSON.stringify(carrito));
    prodACarrito();
 }
 
 vaciarCarrito.addEventListener("click", () => {
    carrito.length = 0;
    Swal.fire('Has vaciado tu carrito');
-   localStorage.removeItem("carroCompras");
+
+   localStorage.setItem("carrito",JSON.stringify(carrito));
+   //localStorage.removeItem("carroCompras");
    itemsCarrito.innerText = 0;
    prodACarrito();
    carroVacio();
