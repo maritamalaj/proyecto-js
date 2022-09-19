@@ -2,8 +2,6 @@
 const inputs = [...document.querySelectorAll(".formularioCompra .input")];
 const checkoutInfo = document.querySelector(".checkout-info");
 const checkoutTotal = document.querySelector(".checkout-total");
-const retiroLocalBtn = document.querySelector("#retiroPorLocal");
-const envioBtn = document.getElementById("envioDomicilio");
 const infoExtra = document.querySelector(".info-extra");
 const form = document.querySelector(".formularioCompra");
 const email = document.querySelector("#email");
@@ -25,17 +23,17 @@ let compraRealizada = localStorage.getItem("carroCompras") ? JSON.parse(localSto
 console.log(compraRealizada);
 
 
-const estudios= JSON.parse(localStorage.getItem("estudios"))||[]
+const estudios= JSON.parse(localStorage.getItem("galeria"))||[]
 
-const productosComprados = () => {
-    compraRealizada.forEach((estud) => {
+const estudiosComprados = () => {
+    compraRealizada.forEach((estudio) => {
         let div = document.createElement("div");
         div.className = "cart-item";
         div.innerHTML = `
         <div>
-            <h3>${estud.nombre}</h4>
-            <h4>$ ${estud.precio}</h5>
-            <h5>Cantidad: ${estud.cantidad}</p>
+            <h3>${estudio.nombre}</h4>
+            <h4>$ ${estudio.precio}</h5>
+            <h5>Cantidad: ${estudio.cantidad}</p>
         </div>
         `;
         checkoutInfo.appendChild(div);
@@ -47,15 +45,15 @@ const productosComprados = () => {
 let sumaFinal = 0;
 let costoEnvio = 350;
 const precioFinal = () => {
-    compraRealizada.map(prod => {
-        sumaFinal += prod.precio * prod.cantidad;
+    compraRealizada.map(estud => {
+        sumaFinal += estud.precio * estud.cantidad;
     });
     checkoutTotal.innerText = sumaFinal;
     return sumaFinal
 }
 
 const realizarCompra = () => {
-    productosComprados();
+   estudiosComprados();
     precioFinal();
 }
 
@@ -131,7 +129,7 @@ const validarFormulario = (e) => {
             }
             break;
         default:
-            alert("algo esta mal");
+            alert("Dato inválido, intente nuevamente");
             break
     }
 }
@@ -206,14 +204,16 @@ const mercadopago = async () => {
         let response = await fetch("https://api.mercadopago.com/checkout/preferences", {
             method: "POST",
             headers: {
-                Authorization: "Bearer TEST-3745156904847921-090516-f1691d3a4f02429c92e0b7facddc9b4a-156371418"
+                Authorization: "Bearer TEST-409954785412216-091816-8ef85dd1eb1976a5f30e2c4c8483f6db-83448045"
+
             },
             body: JSON.stringify({
                 items: carritoMap,
                 back_urls: {
-                    "success": "http://127.0.0.1:5500/index.html",
-                    "failure": "http://127.0.0.1:5500/index.html",
-                    "pending": "http://127.0.0.1:5500/index.html"
+                    "success": "http://127.0.0.1:5501/page/intituto.html",
+                    "failure": "http://127.0.0.1:5501/page/intituto.html",
+                    "pending": "http://127.0.0.1:5501/page/intituto.html"
+                    
                 },
                 auto_return: "approved"
             })

@@ -35,25 +35,58 @@
 </head>
 <body>
     <header>
-		<div class="navbar-center">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-$azul-800 sticky-top">
+			<div class="container-fluid">
+			  <a href="../index.html"><img class="logo_navbar" src="../multimedia/logo.png" alt="logo imac"width="30" height="24" class="d-inline-block align-text-top"></a> 
+			  <a class="navbar-brand text-white" href="#">Imagenes Medicas Cordoba</a>
+			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon "></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav mx-auto text-white   ">
+				  <a class="nav-link active text-white bordebarra " aria-current="page" href="./servicios.html">Servicios</a>
+				  <a class="nav-link text-white bordebarra" href="./intituto.html">Instituto</a>
+				  <a class="nav-link text-white bordebarra" href="./contactos.html">Contactos</a>
+				  <a class="nav-link text-white bordebarra" href="./turnos.html">Turnos</a>
+				  <a class="nav-link text-white bordebarra" href="./entregaDeEstudios.html">Entrega de Estudios</a>
+				</div>
+				<div class="cart-btn">
+				 <span class="nav-icon">
+				   <a href="#" class="abrirCarrito"><i class="fa-solid fa-cart-shopping"></i></a>
+				 </span>
+				 <div id="cart-items">0</div>
+			   </div>
+			  </div>
+			</div>
+		  </nav>
+	   </header>
+	 
+ 
+ 
+ 
+ 
+ 
+ 
+   <h1>Diagnóstico por Imágenes</h1>
+		<!--<div class="navbar-center">
 			<div class="logoCompras">
 				<a href="../index.html"><img class="card-img-top" src="../multimedia/logo.png" alt="logo"></a>
 			</div>
-        </div>
+        </div-->
 	</header>
 	<section>
 		<div class="form-layout">
-			<h1>Finalizar compra</h1>
+			<h2>Finalizá la selección de estudios y pagá</h2>
 		</div>
 		<form class="formularioCompra form" id="form">
 			<div class="form-layout">
 				<!-- personal info -->
 				<div>
-					<h2>Ingresá tus datos</h2>
+					<h2>Ingresando  tus datos</h2>
 					<div class="mb-3 form-control">
 						<label for="email" class="form-label">Correo*</label>
 						<input type="email" name="email" id="email" class="input" placeholder="Ingrese su correo electrónico" required>
-						<i class="formulario__validacion-estado fa-regular fa-circle-check fa-circle-xmark"></i>
+						<i class="formulario__validacion-estado fa-regular fa-circle-check"></i>
 						<i class="fa-regular fa-circle-xmark"></i>
 						<small>Ingrese bien sus datos</small>
 					</div>
@@ -92,7 +125,7 @@
 			
 				<!-- payment method -->
 				<div>
-					<h2>Forma de pago</h2>
+					<h3>Forma de pago</h3>
 					<div class="pago">
 						<input type="radio" name="pago" id="payment-mp" value="payment-mp">
 						<label for="payment-mp">Mercado Pago</label>
@@ -105,12 +138,12 @@
 			</div>
 			<!-- checkout info -->
 			<div class="cart-summary">
-				<h2 class="resumenCompra">Resumen de la compra</h2>
+				<h3 class="resumenCompra">Resumen de la compra</h3>
 				<div class="checkout-info">
 
 				</div>
 				<h3>Total: $<span class="checkout-total">0</span></h3>
-				<button type="submit" class="banner-btn buttonPropiedades">Comprar</button>
+				<button type="submit" class="banner-btn buttonPropiedades">Confirmar Compra</button>
 			</div>
 			<!-- end of checkout info -->
 		</form>
@@ -154,11 +187,14 @@
 
   <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
   	<!-- Sweet Alert -->
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   
   <script src="https://sdk.mercadopago.com/js/v2"></script>
   
   <script src="../compras.js"></script>
+
+
 </body>
 
 </html>
