@@ -375,9 +375,13 @@ h3 {
   main #galeria #miboton {
     margin-bottom: 4px;
   }
-
-
-
+/*Turno*/
+.form-control.input {
+  background-color: white;
+}
+textarea.form-control {
+  background-color: white;
+}
 
 /*COMPRAS*/
 
